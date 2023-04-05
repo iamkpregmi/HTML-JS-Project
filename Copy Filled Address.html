@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Copy Filled Address</title>
+    </head>
+    <body>
+        <b>Mailing Address</b>
+        <br><br>
+        <form>
+            Name:
+            <input type="text" name="shippingname" id='shippingname'>
+            <br>
+            City:
+            <input type="text" name="shippingcity" id="shippingcity">
+            <br>
+            
+            <button type="button" id="btn" name="btn">Copy!</button>
+            <em>Click this button if Billing Address and Mailing Address are the same.</em>
+            <P>
+            <b>Billing Address</b>
+            <br><br> 
+            Name:
+            <input type="text" name="billingname" id="billingname">
+            <br>
+            City:
+            <input type="text" name="billingcity" id="billingcity">
+        </form>
+    </body>
+    <script>
+        document.getElementById('btn').addEventListener('click', FillBilling);
+        function FillBilling() {
+            // Create an array and get the id elments for shipped. 
+            var copyListShip = ['shippingname','shippingcity'];
+            // Create an array and get the id elments for Billed. 
+            var sendListBilling = ['billingname','billingcity'];
+            // for loop the copyListShip array and tranfer them into te ids of sendListBilling;
+            for( var i = 0; i < copyListShip.length; i++ ){
+            document.getElementById(sendListBilling[i]).value = document.getElementById(copyListShip[i]).value
+            }
+        };
+    </script>
+</html>
