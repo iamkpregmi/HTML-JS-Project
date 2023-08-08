@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Number Validation</title>
+    <script>
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var phoneNumberPattern = /^\d{10}$/; // Assumes a 10-digit phone number
+            
+            if (phoneNumberPattern.test(phoneNumber)) {
+                document.getElementById("validationResult").innerHTML = "Phone number is valid.";
+            } else {
+                document.getElementById("validationResult").innerHTML = "Phone number is invalid. Please enter a 10-digit number.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Phone Number Validation</h1>
+    <p>Enter a 10-digit phone number:</p>
+    <input type="text" id="phoneNumber" placeholder="Enter phone number">
+    <button onclick="validatePhoneNumber()">Validate</button>
+    <p id="validationResult"></p>
+</body>
+</html>
